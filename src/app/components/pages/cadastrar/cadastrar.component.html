@@ -1,0 +1,76 @@
+<div class="container">
+    <mat-card class="card">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <mat-card-title class="title">Cadastro</mat-card-title>
+            <mat-card-subtitle>Informações Pessoais</mat-card-subtitle>
+            <mat-form-field appearance="fill">
+                <mat-label class="form-label">Nome</mat-label>
+                <input matInput type="text" class="form-control" formControlName="nome">
+                <mat-error></mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label class="form-label">Email</mat-label>
+                <input matInput type="email" class="form-control" formControlName="email">
+                <mat-error>nao foi preenchido</mat-error>
+            </mat-form-field>
+
+            <div formGroupName="endereco">
+                <div class="form-group">
+                    <mat-card-subtitle>Endereço</mat-card-subtitle>
+                    <mat-form-field appearance="fill">
+                        <mat-label class="form-label">CEP</mat-label>
+                        <input matInput type="text" class="form-control" formControlName="cep">
+                        <!-- (blur)="consultaCEP()" -->
+                        <mat-error></mat-error>
+                    </mat-form-field>
+                    <span class="spacer"></span>
+                    <mat-form-field appearance="fill">
+                        <mat-label class="form-label">Número</mat-label>
+                        <input matInput type="text" class="form-control" formControlName="numero">
+                        <mat-error></mat-error>
+                    </mat-form-field>
+                    <span class="spacer"></span>
+                    <mat-form-field appearance="fill">
+                        <mat-label class="form-label">Complemento</mat-label>
+                        <input matInput type="text" class="form-control" formControlName="complemento">
+                        <mat-error></mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                        <mat-label class="form-label">Rua</mat-label>
+                        <input matInput type="text" class="form-control" formControlName="rua">
+                        <mat-error></mat-error>
+                    </mat-form-field>
+                    <span class="spacer"></span>
+                    <mat-form-field appearance="fill">
+                        <mat-label class="form-label">Bairro</mat-label>
+                        <input matInput type="text" class="form-control" formControlName="bairro">
+                        <mat-error></mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-group">
+                    <mat-form-field appearance="fill">
+                        <mat-label class="form-label">Cidade</mat-label>
+                        <input matInput type="text" class="form-control" formControlName="cidade">
+                        <mat-error></mat-error>
+                    </mat-form-field>
+                    <span class="spacer"></span>
+                    <mat-form-field appearance="fill">
+                        <mat-label class="form-label">Estado</mat-label>
+                        <input matInput type="text" class="form-control" formControlName="estado">
+                        <mat-error></mat-error>
+                    </mat-form-field>
+                </div>
+                
+            </div>
+            <mat-card-actions>
+                <button mat-button type="sumit" [disabled]="formulario.valid">Submit</button>
+                <button mat-button (click)="resetar()">Cancelar</button>
+            </mat-card-actions>
+        </form>
+    </mat-card>
+</div>

@@ -1,0 +1,67 @@
+<div class="container">
+    <mat-card class="card">
+        <!-- <form>
+            <mat-card-title class="title">Ofertar Produto</mat-card-title>
+            <mat-card-subtitle>Informações do produto</mat-card-subtitle>   
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Seu Produto</mat-label>
+                    <mat-select matNativeControl required>
+                        <mat-option *ngFor="let car of cars" [value]="car.value">
+                            {{car.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <span class="spacer"></span>
+                <mat-form-field appearance="fill">
+                    <mat-label>Seu Carro</mat-label>
+                    <mat-select matNativeControl required>
+                        <mat-option *ngFor="let car of cars" [value]="car.value">
+                            {{car.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <span class="spacer"></span>
+                <mat-form-field appearance="fill">
+                    <mat-label>Seu Carro</mat-label>
+                    <mat-select matNativeControl required>
+                        <mat-option *ngFor="let car of cars" [value]="car.value">
+                            {{car.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Descrição</mat-label>
+                <textarea matInput  matNativeControl required ></textarea>
+              </mat-form-field>
+
+            <mat-card-actions>
+                <button mat-button type="sumit">Ofertar</button>
+                <button mat-button>Cancelar</button>
+                <button mat-button [routerLink]="['/leilao']">Leilão</button>
+            </mat-card-actions>
+        </form> -->
+
+        <form [formGroup]="formOferta">
+            <mat-card-title class="title">Nova Oferta</mat-card-title>
+
+            <mat-form-field appearance="fill">
+                <mat-label class="form-label">Produto</mat-label>
+                <input matInput type="text" class="form-control" formControlName="name">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label class="form-label">Valor Incial</mat-label>
+                <input matInput type="text" class="form-control" formControlName="price">
+            </mat-form-field>
+            <mat-card-actions>
+                <button mat-button (click)="onSubmit()" >Cadastrar</button>
+                <button mat-button (click)="onCancel()">Cancelar</button>
+                <button mat-button [routerLink]="['/leilao']">Leilao</button>
+
+            </mat-card-actions>
+        </form>
+
+    </mat-card>
+</div>
